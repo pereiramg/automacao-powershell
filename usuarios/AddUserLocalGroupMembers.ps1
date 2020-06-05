@@ -21,7 +21,7 @@ $user = $acessoServidores.UserName.ToUpper().Split("\")[-1]
 
 #Execução do teste de conectividade com o POwershell
 Write-Host -ForegroundColor Green "========================================= Validacao da porta WinRM ========================================="
-testWinRM ($entradaServidores, $user)
+testWinRM $entradaServidores $user
 
 $data = Get-Date -Format "ddmmyyyy"
 if (Test-Path "$PSScriptRoot\..\logs\$($user)ServerAccept-$($data).txt") {
