@@ -26,7 +26,7 @@ testWinRM $entradaServidores $user
 $data = Get-Date -Format "ddmmyyyy"
 if (Test-Path "$PSScriptRoot\..\logs\$($user)ServerAccept-$($data).txt") {
     $servidoresOK = Get-Content "$PSScriptRoot\..\logs\$($user)ServerAccept-$($data).txt"
-    Write-Host "`nOs servidores que fecharam com sucesso:`n"
+    Write-Host -ForegroundColor Green "`nOs servidores que fecharam com sucesso:"
     $servidoresOK
 }
 else {

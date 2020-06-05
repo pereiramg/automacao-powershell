@@ -24,8 +24,7 @@ function testWinRM($allComputer, $user) {
         } # fim do else
     } # fim do foreach
     
-    Write-Host "`n`nFavor validar o arquivo $PSScriptRoot\..\logs\$($user)ServerError-$($data).txt para saber os servidores com falhas de conexao"
-    Write-Host "`n`nOs servidores nesse arquivo nao serao carregados`n"
+    Write-Host -ForegroundColor Yellow "`nFavor validar o arquivo $PSScriptRoot\..\logs\$($user)ServerError-$($data).txt para consultar os servidores que apresentaram falha"
 }
 
 
