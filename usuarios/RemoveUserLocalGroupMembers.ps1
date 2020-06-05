@@ -1,10 +1,10 @@
 <#
-    Objetivo: Inserir usuário em grupos especificos de cada servidor
+    Objetivo: Remover usuário em grupos especificos de cada servidor
     Version: 1.0
     Autor: Marcelo Galdino Pereira
 #>
 
-Write-Host -ForegroundColor Green "========================================= Inserir usuario em grupos especificos de cada servidor ========================================="
+Write-Host -ForegroundColor Green "========================================= Remover usuario em grupos especificos de cada servidor ========================================="
 
 #Importando o modulo para validação
 Import-Module "$PSScriptRoot\..\winrm\TesteWinRM.ps1" -Force
@@ -48,11 +48,11 @@ Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -Script
         foreach ($users in $using:nomeUsuarios) {
             try {
                 $users = $users.Trim()
-                Add-LocalGroupMember -Group $groups -Member $users -ErrorAction Ignore
-                Write-Host -ForegroundColor Yellow "O $users foi adicionado com sucesso no grupo $groups"
+                Remove-LocalGroupMember -Group $groups -Member $users -ErrorAction Ignore
+                Write-Host -ForegroundColor Yellow "O $users foi removido com sucesso no grupo $groups"
             }
             catch [Microsoft.PowerShell.Commands.MemberExixtsException] {
-                Write-Warning "O $users ja existe no grupo $groups"
+                Write-Warning "O $users não existia no grupo $groups"
             } # fim Catch
         } # fim do foreach
     } # fim do foreach
