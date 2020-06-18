@@ -57,5 +57,4 @@ Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -Script
         } # fim do foreach
     } # fim do foreach
 } # fim do invoke command
-
 Pause
