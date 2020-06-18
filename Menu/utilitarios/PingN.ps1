@@ -138,3 +138,4 @@ $mainPing.Controls.Add($textBoxResultado)
 
 #Exibir formulario
 $mainPing.ShowDialog()
+
