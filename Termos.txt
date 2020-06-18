@@ -1,0 +1,56 @@
+Common operators
+-eq = Igual
+-ne = Not equal
+-and = and
+-or = or
++ = Adição ou concatenação
+$() = operador de sub expressões
+
+Dropping unwanted output
+assign to null --> $null = get-command
+cast to void --> [void](get-command)
+pipe to out-null --> get-command | out-null
+redirect to null --> get-command > $null
+
+Arrays
+Using the array operator
+@() --> $array = @() #Array vazio
+    --> $array = @(1, 2, 3, 4)
+
+Implicit array
+$array = 1, 2, 3, 4
+$array = "one","two","three", "four"
+
+Using the hashtable operator
+$hastable = @{} # vazio
+$hastable = @{key1 ="value1"}
+$hastable = @{key1 ="value1"; key2="value2"}
+
+String
+"" --> $greeting ="Hello"; "$greeting World"
+@"
+"@ --> $one = 'onde'
+        @"
+            teste
+            teste
+            teste
+        "@
+'' --> '$greeting world' #enibi as variaveis e caracteres especiais
+@'
+Mesmo principio
+enibe as variaveis e caracteres especiais
+'@
+
+Variaveis comuns
+$error --> $error[0] # last error
+$formatEnumerationLimit --> definir quantidade a ser mostrado
+$Host
+$Matches
+$OFS
+$PID
+$PROFILE
+$PSVersionTable
+$PWD
+
+
+
