@@ -27,6 +27,3 @@ function testWinRM($allComputer, $user) {
     Write-Host -ForegroundColor Yellow "`nFavor validar o arquivo $PSScriptRoot\..\logs\$($user)ServerError-$($data).txt para consultar os servidores que apresentaram falha"
 }
 
-
-
-
