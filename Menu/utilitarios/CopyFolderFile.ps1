@@ -19,5 +19,4 @@ foreach ($server in $entradaServidores){
     Copy-Item -Path $origemFile -Destination $destino -Force -Recurse
     Write-Host -ForegroundColor Green $server
 }
-
 pause
