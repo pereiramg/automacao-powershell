@@ -36,5 +36,4 @@ Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -Script
     Add-WebConfigurationProperty -PSPath "MACHINE/WEBROOT/APPHOST" -Filter "system.webServer/security/requestFiltering" -Value @{VERB="OPTIONS";allowed="False"} -Name Verbs -AtIndex 0
     Add-WebConfigurationProperty -PSPath "MACHINE/WEBROOT/APPHOST" -Filter "system.webServer/security/requestFiltering" -Value @{VERB="DELETE";allowed="False"} -Name Verbs -AtIndex 1
 }
-
 Pause
