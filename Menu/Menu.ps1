@@ -44,6 +44,7 @@ while ($menu -ne 37) {
         #Write-Host "`b 27 - Captura do MAC Address"
         #Write-Host "`b 28 - Remocao de Package"
         Write-Host "`b 29 - Copia de Arquivos e pastas" #OK
+        Write-Host "`b 30 - Deletar Arquivos e pastas" #OK
         #Write-Host "`b 30 - Execução de Scripts Remoto"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Cluster ----------------------------------------`n"
         # Write-Host "`b 31 - Adicionar as interfaces de rede necessarias para servidores cluster"
@@ -67,7 +68,8 @@ while ($menu -ne 37) {
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
             25 { & "$PSScriptRoot\utilitarios\PingN.ps1"}
-            29 { & "$PSScriptRoot\utilitarios\CopyFolderFile"}
+            29 { & "$PSScriptRoot\utilitarios\CopyFolderFile.ps1"}
+            30 { & "$PSScriptRoot\utilitarios\RemoveFolderFile.ps1"}
             35 { & "$PSScriptRoot\iis\InstallFramework35.ps1"}
             36 { & "$PSScriptRoot\iis\DisableDeleteOptionsHTTPVerbs.ps1"}
             1 { & "$PSScriptRoot\"}
