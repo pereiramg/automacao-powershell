@@ -44,5 +44,4 @@ Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -Script
         install_WindowsFeature NET-Framework-Core -Source $Using:folderSxs folderSxs
     }
 }
-
 pause
