@@ -45,5 +45,4 @@ $resultado = Invoke-Command -ComputerName $servidoresOK -Credential $acessoServi
 }
 
 $resultado
-
 Pause
