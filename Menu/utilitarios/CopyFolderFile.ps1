@@ -14,13 +14,10 @@ $origemFile = Read-Host "Informe a ogirem para realizar a copia. Ex.: C:\CopyFol
 $destino = Read-Host "Informe o destino para realizar a copia. Ex.: C:\temp\NewFolder"
 $destino = $destino -replace ':', '$'
 
-#Credenciais de acesso aos servidores
-$acessoServidores = Get-Credential -Message "Insira as credencias de acesso aos servidores"
-
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 
 foreach ($server in $entradaServidores){
-    Copy-Item -Path $origemFile -Destination "\\$server\$destino" -Credential $acessoServidores -Force -Recurse
-    Write-Host -ForegroundColor Green $server
+    Copy-Item -Path $origemFile -Destination "\\$server\$destino" -Force -Recurse
+    Write-Host -ForegroundColor Green "$server - OK"
 }
 pause
