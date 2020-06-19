@@ -33,16 +33,9 @@ while ($menu -ne 37) {
         # Write-Host "`b 19 - Rollback do TLS 1.2, Ciphers e demais protocolos"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Utilitarios ----------------------------------------`n"
         Write-Host "`b 20 - Instalação do Simple TCP/IP Services no Windows Server" #OK
+        Write-Host "`b 21 - Execução de scripts remoto" #OK
         Write-Host "`b 25 - Ping sob demanda" #OK
-        #Write-Host "`b 20 - Realizar boot dos servidores"
-        #Write-Host "`b 21 - Desativar o registro de DNS das interfaces de rede"
-        #Write-Host "`b 22 - Inserir servidores de DNS em uma interface especifica"
-        #Write-Host "`b 23 - Converter Windows Evaluation para Server Standard 2016"
-        #Write-Host "`b 24 - Realizar TELNET sob demanda em servidores WINDOWS"
-        #Write-Host "`b 25 - Adicionar interfaces de rede" #Analisar
-        #Write-Host "`b 26 - Remover o windows-Feature SNMP services"
-        #Write-Host "`b 27 - Captura do MAC Address"
-        #Write-Host "`b 28 - Remocao de Package"
+
         Write-Host "`b 29 - Copia de Arquivos e pastas" #OK
         Write-Host "`b 30 - Deletar Arquivos e pastas" #OK
         #Write-Host "`b 30 - Execução de Scripts Remoto"
@@ -67,6 +60,7 @@ while ($menu -ne 37) {
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
+            21 { & "$PSScriptRoot\utilitarios\ExecuteRemotePS1.ps1"}
             25 { & "$PSScriptRoot\utilitarios\PingN.ps1"}
             29 { & "$PSScriptRoot\utilitarios\CopyFolderFile.ps1"}
             30 { & "$PSScriptRoot\utilitarios\RemoveFolderFile.ps1"}
