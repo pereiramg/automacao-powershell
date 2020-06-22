@@ -32,8 +32,8 @@ while ($menu -ne 37) {
         # Write-Host "`b 18 - Habilitar o TLS 1.2, Ciphers e demais protocolos"
         # Write-Host "`b 19 - Rollback do TLS 1.2, Ciphers e demais protocolos"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Utilitarios ----------------------------------------`n"
-        Write-Host "`b 20 - Instalação do Simple TCP/IP Services no Windows Server" #OK
-        Write-Host "`b 21 - Execução de scripts remoto" #OK
+        Write-Host "`b 20 - Instalacao do Simple TCP/IP Services no Windows Server" #OK
+        Write-Host "`b 21 - Execucao de scripts remoto" #OK
         Write-Host "`b 25 - Ping sob demanda" #OK
 
         Write-Host "`b 29 - Copia de Arquivos e pastas" #OK
@@ -46,12 +46,12 @@ while ($menu -ne 37) {
         # Write-Host "`b 34 - Adicionar os discos no Cluster e Group"
         # Write-Host "`b 35 - Set Cluster log para 1024"
         Write-Host -ForegroundColor Green "`n---------------------------------------- IIS ----------------------------------------`n"
-        Write-Host "`b 35 - Instalação do Windows .net Framework 3.5" #OK
+        Write-Host "`b 35 - Instalacao do Windows .net Framework 3.5" #OK
         Write-Host "`b 36 - Disable o Delete e Options no HTTP Verbs IIS" #OK
         Write-Host -ForegroundColor Green "`n---------------------------------------- Sair ----------------------------------------`n"
-        Write-Host "`b 37 - Nenhuma acao a ser realizada. O script será fechado" #OK
+        Write-Host "`b 37 - Nenhuma acao a ser realizada. O script sera fechado" #OK
 
-        $menu = Read-Host "`nSelecione as opções desejadas: [1 ao 37]"
+        $menu = Read-Host "`nSelecione as opcoes desejadas: [1 ao 37]"
 
         switch ($menu) {
             1 { & "$PSScriptRoot\"}
