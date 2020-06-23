@@ -14,8 +14,7 @@ while ($menu -ne 37) {
         Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
         # Write-Host "`b 2 - Verificar o status dos updates nos servidores"
         # Write-Host "`b 3 - Realizar a instalação dos Updates pendentes no servidor"
-        # Write-Host "`b 4 - SCCM - Adicionar maquinas na Collection especificada do Ambiente de Producao"
-        # Write-Host "`b 5 - SCCM - Adicionar maquinas na Collection especificada do ambiente de Homol e DEV"
+        Write-Host "`b 4 - SCCM - dicionar Cumputer em uma Collection"
         # Write-Host "`b 6 - Remover maquinas da Collection especificada do ambiente de Producao"
         # Write-Host "`b 7 - Remover maquinas da Collection especificada do ambiente de Homol e DEV"
         # Write-Host "`b 8 - Dual Scan Disable - Windows Update and SCCM"
@@ -35,7 +34,6 @@ while ($menu -ne 37) {
         Write-Host "`b 20 - Instalacao do Simple TCP/IP Services no Windows Server" #OK
         Write-Host "`b 21 - Execucao de scripts remoto" #OK
         Write-Host "`b 25 - Ping sob demanda" #OK
-
         Write-Host "`b 29 - Copia de Arquivos e pastas" #OK
         Write-Host "`b 30 - Deletar Arquivos e pastas" #OK
         #Write-Host "`b 30 - Execução de Scripts Remoto"
@@ -55,8 +53,10 @@ while ($menu -ne 37) {
 
         switch ($menu) {
             1 { & "$PSScriptRoot\sccm\UpdatesPendentes.ps1"}
-            1 { & "$PSScriptRoot\"}
-            1 { & "$PSScriptRoot\"}
+            2 { & "$PSScriptRoot\"}
+            3 { & "$PSScriptRoot\"}
+            4 { & "$PSScriptRoot\sccm\AdicionarComputerCollection.ps1"}
+            5 { & "$PSScriptRoot\"}
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
@@ -66,8 +66,6 @@ while ($menu -ne 37) {
             30 { & "$PSScriptRoot\utilitarios\RemoveFolderFile.ps1"}
             35 { & "$PSScriptRoot\iis\InstallFramework35.ps1"}
             36 { & "$PSScriptRoot\iis\DisableDeleteOptionsHTTPVerbs.ps1"}
-            1 { & "$PSScriptRoot\"}
-            1 { & "$PSScriptRoot\"}
             37 { Write-Host -ForegroundColor Green "`nUma pena, o sistema sera fechado`n"}
             Default {"`n`bEntrada nao e valida`n"
                 .$menuOpcao} #Fechamento do Default
