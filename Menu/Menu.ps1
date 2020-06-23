@@ -11,7 +11,7 @@ while ($menu -ne 37) {
     $menuOpcao = {
         Write-Host -ForegroundColor Green "`n`n                          Escolha a opcao na qual deseja executar`n`n"
         Write-Host -ForegroundColor Green "---------------------------------------- SCCM ----------------------------------------`n"
-        # Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
+        Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
         # Write-Host "`b 2 - Verificar o status dos updates nos servidores"
         # Write-Host "`b 3 - Realizar a instalação dos Updates pendentes no servidor"
         # Write-Host "`b 4 - SCCM - Adicionar maquinas na Collection especificada do Ambiente de Producao"
@@ -54,7 +54,7 @@ while ($menu -ne 37) {
         $menu = Read-Host "`nSelecione as opcoes desejadas: [1 ao 37]"
 
         switch ($menu) {
-            1 { & "$PSScriptRoot\"}
+            1 { & "$PSScriptRoot\sccm\UpdatesPendentes.ps1"}
             1 { & "$PSScriptRoot\"}
             1 { & "$PSScriptRoot\"}
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
