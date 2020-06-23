@@ -21,7 +21,7 @@ try {
         #Modulo do SCCM
         $moduleSCCM = "E:\Program Files\Microsoft Configuration Manager\AdminConsole\bin\ConfigurationManager.psd1"
         try {
-            Write-Host "Carregando o Modulo do SCCM"
+            Write-Host "Carregando o Modulo do SCCM..."
             Import-Module $moduleSCCM -ErrorAction SilentlyContinue -Force
         }catch{
             Write-Host "Nao foi possivel carregar o modulo, favor validar o caminho correto"
@@ -33,6 +33,7 @@ try {
         Set-Location "$($siteColletion):"
 
         #Adicionar os servidores para a collection especificada
+        Write-Host "Iniciando a remocao..."
         try{
             foreach ($server in $using:entradaServidores) {
                 Remove-CMDeviceCollectionDirectMembershipRule -CollectionName $using:nomeCollection `
