@@ -26,6 +26,8 @@ $hastable = @{} # vazio
 $hastable = @{key1 ="value1"}
 $hastable = @{key1 ="value1"; key2="value2"}
 
+& --> is the call operator which allows you to execute a command, a script, or a function
+
 String
 "" --> $greeting ="Hello"; "$greeting World"
 @"
