@@ -14,8 +14,8 @@ while ($menu -ne 37) {
         Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
         # Write-Host "`b 2 - Verificar o status dos updates nos servidores"
         # Write-Host "`b 3 - Realizar a instalação dos Updates pendentes no servidor"
-        Write-Host "`b 4 - SCCM - dicionar Cumputer em uma Collection"
-        # Write-Host "`b 6 - Remover maquinas da Collection especificada do ambiente de Producao"
+        Write-Host "`b 4 - Adicionar Computer em uma Collection"
+        Write-Host "`b 5 - Remover Computer de uma Collection"
         # Write-Host "`b 7 - Remover maquinas da Collection especificada do ambiente de Homol e DEV"
         # Write-Host "`b 8 - Dual Scan Disable - Windows Update and SCCM"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Usuarios ----------------------------------------`n"
@@ -56,7 +56,7 @@ while ($menu -ne 37) {
             2 { & "$PSScriptRoot\"}
             3 { & "$PSScriptRoot\"}
             4 { & "$PSScriptRoot\sccm\AdicionarComputerCollection.ps1"}
-            5 { & "$PSScriptRoot\"}
+            5 { & "$PSScriptRoot\sccm\RemoveComputerCollection.ps1"}
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
