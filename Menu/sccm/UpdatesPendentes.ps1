@@ -45,5 +45,4 @@ $resultado = Invoke-Command -ComputerName $servidoresOK -Credential $acessoServi
 $resultado | Tee-Object -Append "$PSScriptRoot\..\logs\$($user)ResultadoUpdates$($data).txt"
 
 Write-Host -ForegroundColor Green "`nO arquivo foi gerado com sucesso no caminho: $PSScriptRoot\..\logs\$($user)ResultadoUpdates$($data).txt"
-
 Pause
