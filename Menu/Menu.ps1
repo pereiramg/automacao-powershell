@@ -9,7 +9,9 @@ Write-Host -ForegroundColor Green - "`n`n==================================== Me
 while ($menu -ne 37) {
 
     $menuOpcao = {
-        Write-Host -ForegroundColor Green "`n`n                          Escolha a opcao na qual deseja executar`n`n"
+        Write-Host -ForegroundColor Green "`n`n========================================================================================"
+        Write-Host -ForegroundColor Green "============================  Escolha a opcao na qual deseja executar  ================="
+        Write-Host -ForegroundColor Green "========================================================================================`n`n"
         Write-Host -ForegroundColor Green "---------------------------------------- SCCM ----------------------------------------`n"
         Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
         # Write-Host "`b 2 - Verificar o status dos updates nos servidores"
