@@ -30,7 +30,7 @@ while ($menu -ne 37) {
         # Write-Host "`b 15 - Remover Shares especificados"
         # Write-Host "`b 16 - Habilitar o TLS 1.0"
         # Write-Host "`b 17 - Desabilitar o TLS 1.0"
-        # Write-Host "`b 18 - Habilitar o TLS 1.2, Ciphers e demais protocolos"
+        Write-Host "`b 18 - Habilitar o TLS 1.2, Ciphers e demais protocolos"
         # Write-Host "`b 19 - Rollback do TLS 1.2, Ciphers e demais protocolos"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Utilitarios ----------------------------------------`n"
         Write-Host "`b 20 - Instalacao do Simple TCP/IP Services no Windows Server" #OK
@@ -61,6 +61,7 @@ while ($menu -ne 37) {
             5 { & "$PSScriptRoot\sccm\RemoveComputerCollection.ps1"}
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
+            18 { & "$PSScriptRoot\seguranca\TlsSslOn1-2.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
             21 { & "$PSScriptRoot\utilitarios\ExecuteRemotePS1.ps1"}
             25 { & "$PSScriptRoot\utilitarios\PingN.ps1"}
