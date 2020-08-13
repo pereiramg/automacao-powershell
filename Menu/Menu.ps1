@@ -15,7 +15,7 @@ while ($menu -ne 37) {
         Write-Host -ForegroundColor Green "---------------------------------------- SCCM ----------------------------------------`n"
         Write-Host "`b 1 - Verificar os updates pendentes nos servidores"
         Write-Host "`b 2 - Verificar o status dos updates nos servidores"
-        Write-Host "`b 3 - Realizar a instalação dos Updates pendentes no servidor"
+        Write-Host "`b 3 - Realizar a instalacao dos Updates pendentes no servidor"
         Write-Host "`b 4 - Adicionar Computer em uma Collection"
         Write-Host "`b 5 - Remover Computer de uma Collection"
         # Write-Host "`b 7 - Remover maquinas da Collection especificada do ambiente de Homol e DEV"
