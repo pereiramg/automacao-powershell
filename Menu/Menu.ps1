@@ -18,7 +18,6 @@ while ($menu -ne 37) {
         Write-Host "`b 3 - Realizar a instalacao dos Updates pendentes no servidor"
         Write-Host "`b 4 - Adicionar Computer em uma Collection"
         Write-Host "`b 5 - Remover Computer de uma Collection"
-        # Write-Host "`b 7 - Remover maquinas da Collection especificada do ambiente de Homol e DEV"
         # Write-Host "`b 8 - Dual Scan Disable - Windows Update and SCCM"
         Write-Host -ForegroundColor Green "`n---------------------------------------- Usuarios ----------------------------------------`n"
         Write-Host "`b 9 - Inserir usarios/grupos em grupos especificos de cada servidor" #OK
@@ -35,6 +34,7 @@ while ($menu -ne 37) {
         Write-Host -ForegroundColor Green "`n---------------------------------------- Utilitarios ----------------------------------------`n"
         Write-Host "`b 20 - Instalacao do Simple TCP/IP Services no Windows Server" #OK
         Write-Host "`b 21 - Execucao de scripts remoto" #OK
+        Write-Host "`b 22 - Reiniciar servidores" #OK
         Write-Host "`b 25 - Ping sob demanda" #OK
         Write-Host "`b 29 - Copia de Arquivos e pastas" #OK
         Write-Host "`b 30 - Deletar Arquivos e pastas" #OK
@@ -64,6 +64,7 @@ while ($menu -ne 37) {
             18 { & "$PSScriptRoot\seguranca\TlsSslOn1-2.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
             21 { & "$PSScriptRoot\utilitarios\ExecuteRemotePS1.ps1"}
+            22 { & "$PSScriptRoot\utilitarios\RestartServidores.ps1"}
             25 { & "$PSScriptRoot\utilitarios\PingN.ps1"}
             29 { & "$PSScriptRoot\utilitarios\CopyFolderFile.ps1"}
             30 { & "$PSScriptRoot\utilitarios\RemoveFolderFile.ps1"}
