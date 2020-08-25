@@ -24,7 +24,7 @@ while ($menu -ne 37) {
         Write-Host "`b 10 - Remover usuarios/grupos em grupos especificos de cada servidor" #OK
         Write-Host -ForegroundColor Green "`n---------------------------------------- Seguranca ----------------------------------------`n"
         # Write-Host "`b 12 - Habilitar o Firewall - Profile Domain / Private / Public"
-        # Write-Host "`b 13 - Desativar o SMBv1"
+        Write-Host "`b 13 - Desativar o SMBv1"
         # Write-Host "`b 14 - Habilitar o SMBv2 RequireSecuritySignature ON"
         # Write-Host "`b 15 - Remover Shares especificados"
         # Write-Host "`b 16 - Habilitar o TLS 1.0"
@@ -61,6 +61,7 @@ while ($menu -ne 37) {
             5 { & "$PSScriptRoot\sccm\RemoveComputerCollection.ps1"}
             9 { & "$PSScriptRoot\usuarios\AddUserLocalGroupMembers.ps1"}
             10 { & "$PSScriptRoot\usuarios\RemoveUserLocalGroupMembers.ps1"}
+            13 { & "$PSScriptRoot\seguranca\SMBv1OFF.ps1"}
             18 { & "$PSScriptRoot\seguranca\TlsSslOn1-2.ps1"}
             20 { & "$PSScriptRoot\utilitarios\InstallSimpleTcpIp.ps1"}
             21 { & "$PSScriptRoot\utilitarios\ExecuteRemotePS1.ps1"}
