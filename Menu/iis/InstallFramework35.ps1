@@ -4,9 +4,9 @@
     Autor: Marcelo Galdino Pereira
 #>
 
-Write-Host -ForegroundColor Green "========================================= Instalação do Windows .net Framework 3.5 ========================================="
+Write-Host -ForegroundColor Green "========================================= Instalacao do Windows .net Framework 3.5 ========================================="
 
-#Importando o modulo para validação
+#Importando o modulo para validacao
 Import-Module "$PSScriptRoot\..\winrm\TesteWinRM.ps1" -Force
 
 # Solicitando o arquivo com os servidores
@@ -36,12 +36,12 @@ else {
 
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 
-$folderSxs = Read-Host "`nInforme o caminho da pasta SXS para instalação"
+$folderSxs = Read-Host "`nInforme o caminho da pasta SXS para instalacao"
 
 Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -ScriptBlock {
     $valida = Get-WindowsFeature | Where-Object {$_.Name -eq "NET-Framework-Core"}
     if (!$valida){
-        install_WindowsFeature NET-Framework-Core -Source $Using:folderSxs folderSxs
+        install-WindowsFeature NET-Framework-Core -Source $Using:folderSxs folderSxs
     }
 }
 pause
