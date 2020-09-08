@@ -40,7 +40,7 @@ $folderSxs = Read-Host "`nInforme o caminho da pasta SXS para instalacao"
 
 Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -ScriptBlock {
     $valida = Get-WindowsFeature | Where-Object {$_.Name -eq "NET-Framework-Core"}
-    if (!$valida){
+    if ($valida.Installed -ne "True"){
         install-WindowsFeature NET-Framework-Core -Source $Using:folderSxs folderSxs
     }
 }
