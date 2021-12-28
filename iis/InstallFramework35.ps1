@@ -23,4 +23,5 @@ Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -S
     }
 }
 
+
 pause
