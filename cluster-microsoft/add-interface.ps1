@@ -23,6 +23,15 @@ $senha_vmName = Get-Credential -Message "Insira o usuário e senha de acesso ao 
 # Nesse mesmo local deixo um modelo para preencher, lemnrando que a separação deve ser por ;
 # Exemplo:
 # Vcenter;VM_Name;Cluster;VlanHB;IPHeartbeat;MaskHeartbeat;VlanBK;IPBackup;MaskBackup
+# Vcenter = Seu vcenter
+# VM_Name = Nome do servidor
+# Cluster = Nome do cluster dentro do vcenter onde o servidor está alocado
+# VlanHB = Nome da VLANhb
+# IPHeartbeat = IP do Heartbeat
+# MaskHeartbeat = Mascara de rede do Heartbeat
+# VlanBK = Nome da VlanBk
+# IPBackup = IP de Backup
+# MaskBackup = Mascara de rede do Backup
 $pathCSV = Read-Host "Informe o caminho do CSV"
 $csvInfo = Import-Csv $pathCSV -UseCulture
 
