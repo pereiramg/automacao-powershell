@@ -1,4 +1,4 @@
-# automacao-powershell
+# Automacao Powershell
 O projeto visa criar diversos scritps em PowerShell para realizar instalação de pacotes e correção de problemas no Windows Server 2012/2016/2019
 
 * ### cluster-microsoft
