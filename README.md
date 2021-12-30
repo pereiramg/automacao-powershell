@@ -12,8 +12,10 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   
   Obs:   Todos os scripts devem ser executados diretamente na origem, com exceção do __add-interface.ps1__, pois a origem precisar ser o PowerCli e acesso ao Vcenter.
          Caso precise executar remoto, pode usar PSSession, ou modificar e colocar dentro de um Invoke-Command
-
+<br/><br/>
+<br/><br/>
 * ### iis
   * __DisableDeleteOptionsHTTPVerbs.ps1__ --> Script para efetuar o Disable o Delete e Options no HTTP Verbs IIS no IIS. Precisa criar um txt com os nomes dos servidores.
-         
-         
+  * __installFramework35.ps1__ --> Script para Instalação do Windows .net Framework 3.5, precisa informar um txt com a lista dos servidores.
+
+
