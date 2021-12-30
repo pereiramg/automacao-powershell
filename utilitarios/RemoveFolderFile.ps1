@@ -21,5 +21,4 @@ Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -S
     Remove-Item -LiteralPath $using:nomeFolderFile -Force -Recurse -ErrorAction Ignore
     Write-Host "Realizado a remoção com sucesso do $using:nomeFolderFile em $env:COMPUTERNAME"
 }
-
 Pause
