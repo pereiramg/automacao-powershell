@@ -42,4 +42,5 @@ Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -S
 
 Write-Host -ForegroundColor Green "`nRealizado os ajustes com sucesso"
 
+
 Pause
