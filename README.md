@@ -20,6 +20,11 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 * ### seguranca
   * __SMBv1OFF.ps1__ --> Script para Desabilitar o SMBv1 do Windows Server.
   * __TlsSslOn1-2.ps1__ --> Script para Habilitar o TLS 1.2, Ciphers e demais protocolos.
-
+<br/><br/>
+* ### utilitarios
+  * __CopyFolderFile.ps1__ --> Script para Copiar Folder ou Files. Executar na origem do arquivo a ser copiado.
+  * __execute-remote-scripts-PS.ps1__ --> Script para Execução de scripts Powershell remoto.
+  * __install-SimpleTcpIp.ps1__ --> Script para Instalação do Simple TCP/IP Services no Windows Server
+  * __
 
 
