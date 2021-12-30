@@ -17,5 +17,11 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 * ### iis
   * __DisableDeleteOptionsHTTPVerbs.ps1__ --> Script para efetuar o Disable o Delete e Options no HTTP Verbs IIS no IIS. Precisa criar um txt com os nomes dos servidores.
   * __installFramework35.ps1__ --> Script para Instalação do Windows .net Framework 3.5, precisa informar um txt com a lista dos servidores.
+<br/><br/>
+<br/><br/>
+* ### seguranca
+  * __SMBv1OFF.ps1__ --> Script para Desabilitar o SMBv1 do Windows Server.
+  * __TlsSslOn1-2.ps1__ --> Script para Habilitar o TLS 1.2, Ciphers e demais protocolos.
 
+  
 
