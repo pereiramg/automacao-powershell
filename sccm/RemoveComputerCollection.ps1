@@ -45,4 +45,5 @@ try {
 
 Write-Host -ForegroundColor Green "Os servidores foram removidos da Collection $nomeCollection com sucesso"
 
+
 Pause
