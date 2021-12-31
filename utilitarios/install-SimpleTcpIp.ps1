@@ -24,6 +24,7 @@ Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -S
 $resultado = Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -ScriptBlock{
     Get-WindowsFeature -Name Simple-TCPIP
 }
-$resultado
+
+$resultado | Format-List PSComputerName,DisplayName,Installed
 
 Pause
