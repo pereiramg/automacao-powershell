@@ -1,6 +1,9 @@
 # Automacao Powershell
 O projeto visa criar diversos scritps em PowerShell para realizar instalação de pacotes e correção de problemas no Windows Server 2012/2016/2019
-
+<br/><br/>
+* ### activeDirectory
+  * __create-groups-ad.ps1__ --> Script para Criação de grupos no AD.
+<br/><br/>
 * ### cluster-microsoft
   * __add-interface.ps1__ --> Script utilizado para adicionar as interfaces de rede HB e Backup usando o PowerCli, ele associa as VLANs e configura os IPs nas interfaces.
   * __add-interface.csv__ --> Arquivo CSV para dar suporte ao _add-interface.ps1_.
@@ -19,13 +22,18 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 <br/><br/>
 * ### sccm
   * __addComputerCollection.ps1__ --> Script para Adicionar Computer em uma Collection.
+  * __dual-scan-disable.ps1__ --> Script para Disabilita o Dual Scan.
   * __ForceUpdateSCCM.ps1__ --> Script para Forçar os updates pendentes no servidor
   * __RemoveComputerCollection.ps1__ --> Script para Remove Computer em uma Collection
   * __StatusUpdates.ps1__ --> Script para Verificar os status dos updates nos servidores.
   * __UpdatesPendentes.ps1__ --> Script para verificar os Updates Pendentes.
 <br/><br/>
 * ### seguranca
+  * __firewall-on.ps1__ --> Script para Ativação do firewall Domain, Private, Public.
   * __SMBv1OFF.ps1__ --> Script para Desabilitar o SMBv1 do Windows Server.
+  * __SMBv2-RequireSecuritySignature-ON.ps1__ --> Script para SMBv2 Require Security Signature ON.
+  * __TlsSslOn1-0-Rollback.ps1__ --> Script para Rollback do Habilitar o TLS 1.0.
+  * __TlsSslOn1-0.ps1__ --> Script para Habilitar o TLS 1.0.
   * __TlsSslOn1-2.ps1__ --> Script para Habilitar o TLS 1.2, Ciphers e demais protocolos.
 <br/><br/>
 * ### usuarios
