@@ -14,11 +14,11 @@ $nomeCollection = Read-Host "Informe o nome da Collection para ser adicionada no
 # Solicitando o arquivo com os servidores
 $entradaServidores = Get-Content (Read-Host "Insira o caminho e o nome do txt com os servidores para adicionar na Collection: Ex: c:\temp\servidores.txt")
 
-
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 try {
     Invoke-Command -ComputerName $servidorSCCM -ScriptBlock {
         #Modulo do SCCM
+        # Aqui se faz necessario alterar para o caminho correto de cada instalação do SCCM
         $moduleSCCM = "E:\Program Files\Microsoft Configuration Manager\AdminConsole\bin\ConfigurationManager.psd1"
         try {
             Write-Host "Carregando o Modulo do SCCM..."
@@ -28,6 +28,7 @@ try {
             Pause
             Break
         } # fim do catch
+        
         # Descoberta do Site Code
         $siteColletion = (Get-PSDrive -PSProvider CMSite | Sort-Object -Property Name | Select-Object -First 1).Name
         Set-Location "$($siteColletion):"
