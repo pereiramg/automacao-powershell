@@ -1,0 +1,40 @@
+
+Exit-PSSession
+Exit
+
+#Importa modulos
+Import-Module ActiveDirectory
+
+# Listar as propriedades de um user
+Get-ADUser user
+
+# LIstar os grupos que um usuário faz parte
+Get-ADPrincipalGroupMembership user | Select Name
+
+# Listar
+Get-ADGroupMember "group" | Select name
+
+# Capturar o UserPrincipalName usando o seu email cadastrado
+$users = Get-Content "c:\temp\user.txt"
+foreach ($user in $users) {
+    Get-ADUser -Filter {UserPrincipalName -like $user} | Select Name -ExpandProperty Name | Out-File `
+    "c:\temp\resultado.txt" -Append
+}
+
+Get-ADUser -Server "dominio.com.br" -Identity user
+Resolve-DnsName "dominio.com.br"
+
+# nslookup - resolução de nomes sob demanda
+$ips = Get-Content "c:\temp\ips.txt"
+foreach ($ip in $ips) {
+    Resolve-DnsName $ip | Select NameHost -ExpandProperty NameHost | Out-File "c:\temp\resolucao.txt" -Append
+}
+
+# Converter minusculos para maiusculo
+$frase = "Teste TESTE"
+$frase.ToUpper()
+$frase.ToLower()
+
+# Procurar um objeto computer e depois remover ele
+Get-ADComputer server
+Remove-ADComputer server
