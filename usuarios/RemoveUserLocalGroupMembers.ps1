@@ -1,36 +1,16 @@
 <#
-    Objetivo: Remover usuário em grupos especificos de cada servidor
+    Objetivo: Remover usuários em grupos especificos de cada servidor
     Version: 1.0
     Autor: Marcelo Galdino Pereira
 #>
 
-Write-Host -ForegroundColor Green "========================================= Remover usuario em grupos especificos de cada servidor ========================================="
-
-#Importando o modulo para validação
-Import-Module "$PSScriptRoot\..\winrm\TesteWinRM.ps1" -Force
+Write-Host -ForegroundColor Green "========================================= Remover usuarios em grupos especificos de cada servidor ========================================="
 
 # Solicitando o arquivo com os servidores
 $entradaServidores = Get-Content (Read-Host "Insira o caminho e o nome do txt com os servidores: Ex: c:\temp\servidores.txt ")
 
 #Credenciais de acesso aos servidores
 $acessoServidores = Get-Credential -Message "Insira as credencias de acesso aos servidores"
-$user = $acessoServidores.UserName.ToUpper().Split("\")[-1]
-
-#Execução do teste de conectividade com o POwershell
-Write-Host -ForegroundColor Green "`n========================================= Validacao da porta WinRM ========================================="
-testWinRM $entradaServidores $user
-
-$data = Get-Date -Format "ddmmyyyy"
-if (Test-Path "$PSScriptRoot\..\logs\$($user)ServerAccept-$($data).txt") {
-    $servidoresOK = Get-Content "$PSScriptRoot\..\logs\$($user)ServerAccept-$($data).txt"
-    Write-Host -ForegroundColor Green "`nOs servidores que fecharam com sucesso:"
-    $servidoresOK
-}
-else {
-    Write-Host -ForegroundColor Red "`nNenhum servidor fechou com sucesso a conectividade com o WinRM"
-    Pause
-    Break
-}
 
 #Capturando o group
 Write-Host -ForegroundColor Green "`n========================================= Informacao do Grupo ========================================="
@@ -43,7 +23,7 @@ Write-Host "O arquivo precisa conter o dominio e usuario como segue DOMINIO\USUA
 $nomeUsuarios = Get-Content (Read-Host "Informe o caminho e o txt com o nome dos usuarios. EX.: c:\temp\usuarios.txt")
 
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
-Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -ScriptBlock {
+Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -ScriptBlock {
     foreach ($groups in $using:nomeGroup) {
         foreach ($users in $using:nomeUsuarios) {
             try {
@@ -57,4 +37,5 @@ Invoke-Command -ComputerName $servidoresOK -Credential $acessoServidores -Script
         } # fim do foreach
     } # fim do foreach
 } # fim do invoke command
+
 Pause
