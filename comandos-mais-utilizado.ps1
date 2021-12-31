@@ -9,15 +9,15 @@ Import-Module ActiveDirectory
 Get-ADUser user
 
 # LIstar os grupos que um usuário faz parte
-Get-ADPrincipalGroupMembership user | Select Name
+Get-ADPrincipalGroupMembership user | Select-Object Name
 
 # Listar
-Get-ADGroupMember "group" | Select name
+Get-ADGroupMember "group" | Select-Object name
 
 # Capturar o UserPrincipalName usando o seu email cadastrado
 $users = Get-Content "c:\temp\user.txt"
 foreach ($user in $users) {
-    Get-ADUser -Filter {UserPrincipalName -like $user} | Select Name -ExpandProperty Name | Out-File `
+    Get-ADUser -Filter {UserPrincipalName -like $user} | Select-Object Name -ExpandProperty Name | Out-File `
     "c:\temp\resultado.txt" -Append
 }
 
@@ -27,7 +27,7 @@ Resolve-DnsName "dominio.com.br"
 # nslookup - resolução de nomes sob demanda
 $ips = Get-Content "c:\temp\ips.txt"
 foreach ($ip in $ips) {
-    Resolve-DnsName $ip | Select NameHost -ExpandProperty NameHost | Out-File "c:\temp\resolucao.txt" -Append
+    Resolve-DnsName $ip | Select-Object NameHost -ExpandProperty NameHost | Out-File "c:\temp\resolucao.txt" -Append
 }
 
 # Converter minusculos para maiusculo
