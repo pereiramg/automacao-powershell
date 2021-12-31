@@ -28,6 +28,6 @@ $resultado = Invoke-Command -ComputerName $entradaServidores -Credential $acesso
     Get-WindowsFeature -Name NET-Framework-Core
 }
 
-$resultado | Format-List PSComputerName,-DisplayName,Installed
+$resultado | Format-List PSComputerName,DisplayName,Installed
 
 pause
