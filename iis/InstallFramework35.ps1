@@ -23,5 +23,11 @@ Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -S
     }
 }
 
+# Resultado da instalação nos servidores
+$resultado = Invoke-Command -ComputerName $entradaServidores -Credential $acessoServidores -ScriptBlock {
+    Get-WindowsFeature -Name NET-Framework-Core
+}
+
+$resultado | Format-List PSComputerName,-DisplayName,Installed
 
 pause
