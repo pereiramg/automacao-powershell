@@ -30,11 +30,14 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 <br/><br/>
 * ### seguranca
   * __firewall-on.ps1__ --> Script para Ativação do firewall Domain, Private, Public.
+  * __removeShares.ps1__ --> Script para Remover Shares indevidas
   * __SMBv1OFF.ps1__ --> Script para Desabilitar o SMBv1 do Windows Server.
+  * __SMBv1OFF-Rollback.ps1__ --> Script para realizar o Rollback do SMBv1OFF.ps1
   * __SMBv2-RequireSecuritySignature-ON.ps1__ --> Script para SMBv2 Require Security Signature ON.
-  * __TlsSslOn1-0-Rollback.ps1__ --> Script para Rollback do Habilitar o TLS 1.0.
+  * __TlsSslOn1-0-Rollback.ps1__ --> Script para realizar o Rollback do TlsSslOn1-0.ps1.
   * __TlsSslOn1-0.ps1__ --> Script para Habilitar o TLS 1.0.
   * __TlsSslOn1-2.ps1__ --> Script para Habilitar o TLS 1.2, Ciphers e demais protocolos.
+  * __TlsSslOn1-2-Rollback.ps1__ --> Script para realizar o Rollback do TlsSslOn1-2.ps1
 <br/><br/>
 * ### usuarios
   * __AddUserLocalGroupMembers.ps1__ --> Script para Inserir usuários em grupos especificos de cada servidor. Precisa criar 3 arquivos txt conforme 
