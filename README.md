@@ -51,7 +51,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __RemoveFolderFile.ps1__ --> Script para Deletar Folder ou Files
   * __restartServers.ps1__ --> Script para Reiniciar Servidores.
   * __telnet.ps1__ --> Script em modo visual para realizar Telnet (Projeto particular para testes visual)
-  * ___linux.jpg___ --> 
+  * __linux.jpg__ --> Arquivo imagem do telnet.ps1
+  * __windows.jpg__ --> Arquivo imagem do telnet.ps1
 <br/><br/>
 * ### winrm
   * __TesteWinRM.ps1__ --> Script para Realizar os testes de conectividade do powershell.
