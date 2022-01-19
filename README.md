@@ -48,6 +48,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __execute-remote-scripts-PS.ps1__ --> Script para Execução de scripts Powershell remoto.
   * __install-SimpleTcpIp.ps1__ --> Script para Instalação do Simple TCP/IP Services no Windows Server
   * __ping-NServers.ps1__ --> Script Ping sob demanda. Utilizei os Forms para testar, muito legal.
+  * __RemoveFolderFile.ps1__ --> Script para Deletar Folder ou Files
   * __restartServers.ps1__ --> Script para Reiniciar Servidores.
 <br/><br/>
 * ### winrm
