@@ -50,6 +50,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __ping-NServers.ps1__ --> Script Ping sob demanda. Utilizei os Forms para testar, muito legal.
   * __RemoveFolderFile.ps1__ --> Script para Deletar Folder ou Files
   * __restartServers.ps1__ --> Script para Reiniciar Servidores.
+  * __telnet-linux.psm1__ --> Para ser usado como um modulo com a passagem de parametros.
+  * __telnet-windows.psm1__ --> Para ser usado como um modulo com a passagem de parametros.
   * __telnet.ps1__ --> Script em modo visual para realizar Telnet (Projeto particular para testes visual)
   * __linux.jpg__ --> Arquivo imagem do telnet.ps1
   * __windows.jpg__ --> Arquivo imagem do telnet.ps1
