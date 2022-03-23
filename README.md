@@ -56,6 +56,11 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __linux.jpg__ --> Arquivo imagem do telnet.ps1
   * __windows.jpg__ --> Arquivo imagem do telnet.ps1
 <br/><br/>
+* ### vmware (PowerCli)
+  * __add-existing-hard-disk.ps1__ --> Script para adicionar disco existente em um servidor
+  * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6
+  * __LigarServidores.ps1__ --> Script para ligar servidores
+<br/><br/>
 * ### winrm
   * __TesteWinRM.ps1__ --> Script para Realizar os testes de conectividade do powershell.
 
