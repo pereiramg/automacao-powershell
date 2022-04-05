@@ -63,6 +63,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6
   * __discos-rdm-report.ps1__ --> Script para extrair relatorios de discos RDM
   * __LigarServidores.ps1__ --> Script para ligar servidores
+  * __move-vm-folder.ps1__ --> Script para Mover servidores para folder
+  * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1
   * __recapacity-disk.ps1__ --> Script para Recapacity Disk
   * __recapacity-disk.csv__ --> odelo de informações para o script recapacity-disk.ps1
 <br/><br/>
