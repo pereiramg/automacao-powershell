@@ -16,7 +16,7 @@ $senha_vmware = Get-Credential -Message "Insira usuário e senha para acesso ao 
 
 foreach ($line in $csv_info) {
     
-    $Vcenter = $line.$Vcenter
+    $Vcenter = $line.Vcenter
     $Vcenter = $Vcenter.Trim()
 
     $NameVM = ($line.NameVM).toUpper()
