@@ -9,16 +9,19 @@ Write-Host -ForegroundColor Green "========================================= Cop
 # Solicitando o arquivo com os servidores
 $entradaServidores = Get-Content (Read-Host "Insira o caminho e o nome do txt com os servidores: Ex: c:\temp\servidores.txt ")
 
+#Credenciais de acesso aos servidores
+$acessoServidores = Get-Credential -Message "Insira as credencias de acesso aos servidores"
+
 $origemFile = Read-Host "Informe a ogirem para realizar a copia. Ex.: C:\CopyFolder"
 
 $destino = Read-Host "Informe o destino para realizar a copia. Ex.: C:\temp\NewFolder"
-$destino = $destino -replace ':', '$'
 
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 
 foreach ($server in $entradaServidores){
-    Copy-Item -Path $origemFile -Destination "\\$server\$destino" -Force -Recurse
-    Write-Host -ForegroundColor Green "$server - OK"
+
+    $session = New-PSSession -ComputerName $server -Credential $acessoServidores
+    Copy-Item -Path $origemFile -Destination $destino -ToSession $session -Force -Recurse
 }
 
 Pause
