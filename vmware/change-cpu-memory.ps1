@@ -61,5 +61,5 @@ foreach ($line in $csv_info){
     #Ligando a VM
     Write-Host "`nLigando a $newName" -ForegroundColor Green
     Start-VM $newName -Confirm:$false
-    Disconnect-VIServer $vcenterName
+    Disconnect-VIServer $vcenterName -Confirm:$false
 }
