@@ -45,13 +45,14 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 <br/><br/>
 * ### utilitarios
   * __CopyFolderFile.ps1__ --> Script para Copiar Folder ou Files. Executar na origem do arquivo a ser copiado.
+  * __dotnet-Hosting-2-1-18-win.ps1__ --> Script para instalação do dotnet-Hosting-2-1-18-win. Prestar a atenção no nome e local do EXE
   * __execute-remote-scripts-PS.ps1__ --> Script para Execução de scripts Powershell remoto.
   * __format-disk-L.ps1__ --> Script para Formatar o disco L:\. Aqui ele vai buscar o disco sem partição com tamanho de 10gb. Pode ser tudo customizado.
   * __install-SimpleTcpIp.ps1__ --> Script para Instalação do Simple TCP/IP Services no Windows Server
   * __ping-NServers.ps1__ --> Script Ping sob demanda. Utilizei os Forms para testar, muito legal.
   * __RemoveFolderFile.ps1__ --> Script para Deletar Folder ou Files
   * __restartServers.ps1__ --> Script para Reiniciar Servidores.
-  * __rewrite_amd64_en-US.ps1__ --> Script para Instalando o rewrite_amd64_en-US.msi. Prestar a atenção no nome e local do MSI
+  * __rewrite_amd64_en-US.ps1__ --> Script para instalação do rewrite_amd64_en-US.msi. Prestar a atenção no nome e local do MSI
   * __telnet-linux.psm1__ --> Para ser usado como um modulo com a passagem de parametros.
   * __telnet-windows.psm1__ --> Para ser usado como um modulo com a passagem de parametros.
   * __telnet.ps1__ --> Script em modo visual para realizar Telnet (Projeto particular para testes visual)
