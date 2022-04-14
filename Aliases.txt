@@ -1,5 +1,5 @@
-% -> ForEach-Object                    
-? -> Where-Object                      
+% -> ForEach-Object
+? -> Where-Object
 ac -> Add-Content                      
 asnp -> Add-PSSnapin                   
 cat -> Get-Content                     
@@ -66,7 +66,8 @@ gtz -> Get-TimeZone
 gu -> Get-Unique                       
 gv -> Get-Variable                     
 gwmi -> Get-WmiObject                  
-h -> Get-History                       
+h -> Get-History
+help -> Get-Help      
 history -> Get-History                 
 icm -> Invoke-Command                  
 iex -> Invoke-Expression               
