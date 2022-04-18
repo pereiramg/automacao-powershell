@@ -61,6 +61,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
 <br/><br/>
 * ### vmware (PowerCli)
   * __add-existing-hard-disk.ps1__ --> Script para adicionar disco existente em um servidor
+  * __add-new-ethernet-vm.ps1__ --> Script para adicionar uma nova interface de rede em servidores Windows
+  * __add-new-ethernet-vm.csv__ --> Modelo de informações para o script add-new-ethernet-vm.ps1
   * __change-cpu-memory.ps1__ --> Script para Ajustar CPU e Memoria dos servidores
   * __change-cpu-memory.csv__ --> Modelo de informações para o script change-cpu-memory.ps1
   * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6
