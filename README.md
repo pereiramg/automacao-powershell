@@ -44,6 +44,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __RemoveUserLocalGroupMembers.ps1__ --> Script para Remover usuários em grupos especificos de cada servidor.
 <br/><br/>
 * ### utilitarios
+  * __capture-MAC.ps1__ --> Script para Captura do MAC Address em servidores Windows.
   * __CopyFolderFile.ps1__ --> Script para Copiar Folder ou Files. Executar na origem do arquivo a ser copiado.
   * __dotnet-Hosting-2-1-18-win.ps1__ --> Script para instalação do dotnet-Hosting-2-1-18-win. Prestar a atenção no nome e local do EXE
   * __execute-remote-scripts-PS.ps1__ --> Script para Execução de scripts Powershell remoto.
