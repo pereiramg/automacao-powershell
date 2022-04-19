@@ -70,6 +70,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __config-ip-linux.sh__ --> Script de suporte ao config-network-linux.ps1
   * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6
   * __discos-rdm-report.ps1__ --> Script para extrair relatorios de discos RDM
+  * __export-vmInfo.ps1__ --> Script para Export-VMInfo
   * __LigarServidores.ps1__ --> Script para ligar servidores
   * __move-vm-folder.ps1__ --> Script para Mover servidores para folder
   * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1
