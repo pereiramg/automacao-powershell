@@ -11,9 +11,8 @@ Import-Module VMware.VimAutomation.Core -ErrorAction SilentlyContinue
 Write-Host "`n`n =================================== Captura de informações =================================== " -ForegroundColor Green
 
 $servidores = Get-Content(Read-Host "Insira o caminho do arquivo txt com os dados dos servidores")
-
-$senhaVMware = Get-Credential -Message "Insira usuario e senha para acesso ao VMware"
 $vcenter = Read-Host "Insira o nome do VCenter para se conectar"
+$senhaVMware = Get-Credential -Message "Insira usuario e senha para acesso ao VMware"
 
 Write-Host "`n`n=================== Conectando no $vcenter  =======================`n`n"
     do{
@@ -52,7 +51,9 @@ foreach($vm in $servidores){
                 $row.HDMode = $dev.Backing.CompatibilityMode
                 $row.HDSize = [System.Math]::Round($dev.CapacityInKB / 1048576)
                 $row.HDDisplayName = ($esx.Config.StorageDevice.ScsiLun | where {$_.Uuid -eq $dev.Backing.LunUuid}).CanonicalName
-                $lun = Get-ScsiLun -VmHost $row.VMHost -CanonicalName $row.HDDisplayName
+                if($row.HDDisplayName -ne $null){
+                    $lun = Get-ScsiLun -VmHost $row.VMHost -CanonicalName $row.HDDisplayName
+                }
                 $row.LUN = $lun.RuntimeName.SubString($lun.RuntimeName.LastIndexof("L")+1)
                 $report += $row
             #}
