@@ -19,7 +19,7 @@ $destino = Read-Host "Informe o destino para realizar a copia. Ex.: C:\temp\NewF
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 
 $hoje = Get-Date -Format "dd-MM-yyyy"
-Start-Transcript -Path "$PSScriptRoot\log-copy-$($hoje).log"
+Start-Transcript -Path "$PSScriptRoot\log-copy-$($hoje).log" -Append
 
 foreach ($server in $entradaServidores){
     try{
