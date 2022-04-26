@@ -18,10 +18,17 @@ $destino = Read-Host "Informe o destino para realizar a copia. Ex.: C:\temp\NewF
 
 Write-Host -ForegroundColor Green "`n========================================= Executando as alteracoes ========================================="
 
+$hoje = Get-Date -Format "dd-MM-yyyy"
+Start-Transcript -Path "$PSScriptRoot\log-copy-$($hoje).log"
+
 foreach ($server in $entradaServidores){
-
-    $session = New-PSSession -ComputerName $server -Credential $acessoServidores
-    Copy-Item -Path $origemFile -Destination $destino -ToSession $session -Force -Recurse
+    try{
+        $session = New-PSSession -ComputerName $server -Credential $acessoServidores -ErrorAction SilentlyContinue
+        Copy-Item -Path $origemFile -Destination $destino -ToSession $session -Force -Recurse
+    }catch{
+        Write-Host "Não foi possivel realizar a conexão como servidor $server" -ForegroundColor Red
+    }
+    
 }
-
+Stop-Transcript
 Pause
