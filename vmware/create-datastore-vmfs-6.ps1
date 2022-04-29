@@ -61,6 +61,7 @@ Write-Host "`n`n=================== Conectando no $vcenter  ====================
         $datastoreName = $datastoreName.Trim()
         Get-VMHost -Name $esxiServer | Get-Datastore -Name $datastoreName | Select-Object Name
     }
-    
+
+    #
 Stop-Transcript
 Pause
