@@ -61,21 +61,22 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __windows.jpg__ --> Arquivo imagem do telnet.ps1
 <br/><br/>
 * ### vmware (PowerCli)
-  * __add-existing-hard-disk.ps1__ --> Script para adicionar disco existente em um servidor
-  * __add-new-ethernet-vm.ps1__ --> Script para adicionar uma nova interface de rede em servidores Windows
-  * __add-new-ethernet-vm.csv__ --> Modelo de informações para o script add-new-ethernet-vm.ps1
-  * __change-cpu-memory.ps1__ --> Script para Ajustar CPU e Memoria dos servidores
-  * __change-cpu-memory.csv__ --> Modelo de informações para o script change-cpu-memory.ps1
-  * __config-network-linux.ps1__ --> Script para Configurações de IPs-Linux
-  * __config-ip-linux.sh__ --> Script de suporte ao config-network-linux.ps1
-  * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6
-  * __discos-rdm-report.ps1__ --> Script para extrair relatorios de discos RDM
-  * __export-vmInfo.ps1__ --> Script para Export-VMInfo
-  * __LigarServidores.ps1__ --> Script para ligar servidores
-  * __move-vm-folder.ps1__ --> Script para Mover servidores para folder
-  * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1
-  * __recapacity-disk.ps1__ --> Script para Recapacity Disk
-  * __recapacity-disk.csv__ --> odelo de informações para o script recapacity-disk.ps1
+  * __add-existing-hard-disk.ps1__ --> Script para adicionar disco existente em um servidor.
+  * __add-new-ethernet-vm.ps1__ --> Script para adicionar uma nova interface de rede em servidores Windows.
+  * __add-new-ethernet-vm.csv__ --> Modelo de informações para o script add-new-ethernet-vm.ps1.
+  * __change-cpu-memory.ps1__ --> Script para Ajustar CPU e Memoria dos servidores.
+  * __change-cpu-memory.csv__ --> Modelo de informações para o script change-cpu-memory.ps1.
+  * __config-network-linux.ps1__ --> Script para Configurações de IPs-Linux.
+  * __config-ip-linux.sh__ --> Script de suporte ao config-network-linux.ps1.
+  * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6.
+  * __create-datastore-vmfs-6.csv__ --> Modelo de informações para o script create-datastore-vmfs-6.ps1.
+  * __discos-rdm-report.ps1__ --> Script para extrair relatorios de discos RDM.
+  * __export-vmInfo.ps1__ --> Script para Export-VMInfo.
+  * __LigarServidores.ps1__ --> Script para ligar servidores.
+  * __move-vm-folder.ps1__ --> Script para Mover servidores para folder.
+  * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1.
+  * __recapacity-disk.ps1__ --> Script para Recapacity Disk.
+  * __recapacity-disk.csv__ --> odelo de informações para o script recapacity-disk.ps1.
 <br/><br/>
 * ### winrm
   * __TesteWinRM.ps1__ --> Script para Realizar os testes de conectividade do powershell.
