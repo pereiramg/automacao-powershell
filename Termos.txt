@@ -69,17 +69,3 @@ Get-Help Test-Dtc -Full
 
 Abrir a ajuda na internet
 Get-Help Test-Dtc -Online
-
-
-
-#VMWARE
-Connect-VIServer [seu_esxi]
-Disconnect-VIServer [seu_esxi]
-
-# Saber em qual VIServer está conectado
-$Global:DefaultVIServers
-
-# Ignorar certificado na conexão com o VIServer
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:false
-
-
