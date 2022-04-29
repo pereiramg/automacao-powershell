@@ -38,3 +38,18 @@ $frase.ToLower()
 # Procurar um objeto computer e depois remover ele
 Get-ADComputer server
 Remove-ADComputer server
+
+#VMWARE
+Connect-VIServer [seu_esxi]
+Disconnect-VIServer [seu_esxi]
+
+# Saber em qual VIServer está conectado
+$Global:DefaultVIServers
+
+# Ignorar certificado na conexão com o VIServer
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:false
+
+
+# Diretorio onde estão os modulos carregados no PowerShell
+$env:PSModulePath
+
