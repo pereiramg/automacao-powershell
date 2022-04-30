@@ -77,6 +77,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1.
   * __recapacity-disk.ps1__ --> Script para Recapacity Disk.
   * __recapacity-disk.csv__ --> odelo de informações para o script recapacity-disk.ps1.
+  * __transfer-file-datastore.ps1__ --> Script para Transferencia de arquivos para um datastore
 <br/><br/>
 * ### winrm
   * __TesteWinRM.ps1__ --> Script para Realizar os testes de conectividade do powershell.
