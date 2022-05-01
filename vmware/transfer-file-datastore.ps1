@@ -19,7 +19,7 @@ $fileName = Read-Host "Insira o caminho e o nome do arquivo para transferencia. 
 $nameDatastore = Read-Host "Insira o nome do Datastore onde será transferido"
 $destFolder = Read-Host "Insira o nome da pasta onde o arqvuivo será transferido"
 
-Write-Host "`n`n=================== Conectando no $vcenter  =======================`n`n"
+Write-Host "`n=================== Conectando no $vcenter  =======================`n" -ForegroundColor Green
     do{
         try{
             Connect-VIServer $vcenter -Credential $senhaVMware -Force
