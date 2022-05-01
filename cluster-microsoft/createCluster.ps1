@@ -12,7 +12,7 @@ $ipCluster = Read-Host "Insira o IP do novo Cluster"
 $clusterName = $env:COMPUTERNAME -replace "^S", "C"
 
 #Criação do cluster com os dados informados
-New-Cluster - Name $clusterName -Node $env:COMPUTERNAME -StaticAddress $ipCluster.ToString()
+New-Cluster -Name $clusterName -Node $env:COMPUTERNAME -StaticAddress $ipCluster.ToString()
 
 #Montando um case para adicionar mais Node ao Cluster
 $switchAddNodes = 0
