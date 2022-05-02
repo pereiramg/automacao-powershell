@@ -77,6 +77,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __LigarServidores.ps1__ --> Script para ligar servidores.
   * __move-vm-folder.ps1__ --> Script para Mover servidores para folder.
   * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1.
+  * __moveVM-VCenterCross.ps1__ --> Script para Movendo servidores entre host esxi e VCenters
+  * __moveVM-VCenterCross.csv__ --> Modelo de informações para o script moveVM-VCenterCross.ps1
   * __recapacity-disk.ps1__ --> Script para Recapacity Disk.
   * __recapacity-disk.csv__ --> odelo de informações para o script recapacity-disk.ps1.
   * __transfer-file-datastore.ps1__ --> Script para Transferencia de arquivos para um datastore
