@@ -38,15 +38,15 @@ while ($switchAddNodes -ne 2) {
 #No meu caso utilizei o nome de exemplo g-srv-cluster
 $computerNameCluster = $clusterName + '$'
 try {
-    Add-ADGroupMember -Identity "g-srv-cluster" -Members $computerNameCluster -ErrorAction Stop
+    Add-ADGroupMember -Identity "g_srv_cluster" -Members $computerNameCluster -ErrorAction Stop
 }
 catch [System.Management.Automation.RuntimeException] {
-    Write-Host "Não foi possivel adicionar a $computerNameCluster no grupo g-srv-cluster"
+    Write-Host "Não foi possivel adicionar a $computerNameCluster no grupo g_srv_cluster"
 }
 
 #Alterando o nome das interfaces de rede LAN
 #Para não deixar padrão o nome é recomendado alterar para melhor identificação
-$nameLan = Read-Host "Insira os 3 primeiros conjuntos da rede LAN. Ex: 10.225.20"
+$nameLan = Read-Host "Insira os 2 primeiros conjuntos da rede LAN. Ex: 10.225"
 $nameLan += ".*"
 
 $nameOldLan = Get-ClusterNetwork | ?{$_.Address -like $nameLan} | Select-Object name | ForEach-Object {$_.name}
@@ -61,7 +61,7 @@ while ($switchHB -ne 2) {
         Write-Host "2 - NÃO"
         $switchHB = Read-Host "`n`n Selecione as opções desejadas: [numeros de 1 a 2]"
         switch ($switchHB) {
-            1 {$nameHB = Read-Host "Insira os 3 primeiros conjuntos da rede HB. Ex: 10.225.20"
+            1 {$nameHB = Read-Host "Insira os 2 primeiros conjuntos da rede HB. Ex: 10.225"
                 $nameHB += ".*"
                 $nameOldHB = Get-ClusterNetwork | ?{$_.Address -like $nameHB} | Select-Object name | ForEach-Object {$_.name}
                 (Get-ClusterNetwork -Name $nameOldHB).Name = "HEARTBEAT"}
