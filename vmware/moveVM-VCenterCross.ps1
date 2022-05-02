@@ -25,13 +25,6 @@ foreach ($line in $csv_info){
     $vcenterDestino = $line.VcenterDestino
     $vcenterDestino =  $vcenterDestino.Trim()
 
-    $nameVM = $line.nameVM
-    $vmObj = Get-VM -Name $nameVM
-    $target_pg = @()
-    foreach ($item in $line.targetPortGroup)
-
-
-
     Write-Host "`n`n=================== Conectando no $vcenterOrigem - Origem e $vcenterDestino - Destino =======================`n`n"
     do{
         try{
@@ -48,9 +41,14 @@ foreach ($line in $csv_info){
         }$Error.Clear()
     }until( $lasterror -ne "System.ServiceModel.Security.SecurityNegotiationException")
 
-    Write-Host "Conectado com sucesso no $vcenterOrigem - Origem e $vcenterDestino - Destino"
+    if ($Global:DefaultVIServers -ne $null){
+        Write-Host "Conectado com sucesso no $vcenter"
+    }else{
+        Write-Host "Não foi possivel se conectar, verificar..." -ForegroundColor Yellow
+        exit
+    }
 
-    #Deslligando o servidor
+    #Desligando o servidor
     if((Get-VM $nameVM | Select-Object PowerState -ExpandProperty PowerState) -eq "PoweredOn"){
         Write-Host "Desligando a $nameVM" -ForegroundColor Green
         Stop-VM $nameVM -Confirm:$false
@@ -61,6 +59,22 @@ foreach ($line in $csv_info){
         Write-Host "Servidor ainda ligado, aguarde um momento" -ForegroundColor Green
         Start-Sleep 2
     }while((Get-VM $newName | Select-Object PowerState -ExpandProperty PowerState) -eq "PoweredOn")
+
+
+    foreach ($item in $line.targetPortGroup.Split(",")){
+        $target_pg += Get-VirtualNetwork -Name $item -Server $vcenterDestino
+    }
+
+
+    $nameVM = $line.nameVM
+    $vmObj = Get-VM -Name $nameVM
+    $target_pg = @()
+    $targetHost = Get-VMHost -Name $line.TargetHost
+    $targetDataStore = Get-Datastore -Name $line.TargetDataStore
+    $inventoryLocation = Get-Folder $line.InventoryLocation -Server $vcenterDestino
+
+    Move-VM -VM $vmObj -Destination $targetHost -Datastore $targetDataStore -Network $target_pg -DiskStorageFormat Thin -NetworkAdapter ($vmObj | Get-NetworkAdapter | Sort Name) -RunAsync -Confirm:$false
+}
 
 
 
