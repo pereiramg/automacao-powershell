@@ -40,7 +40,12 @@ foreach ($line in $csv_info) {
         }$Error.Clear()
     }until( $lasterror -ne "System.ServiceModel.Security.SecurityNegotiationException")
 
-    Write-Host "Conectado com sucesso no $Vcenter"
+    if ($Global:DefaultVIServers -ne $null){
+        Write-Host "Conectado com sucesso no $vcenter"
+    }else{
+        Write-Host "Não foi possivel se conectar, verificar..." -ForegroundColor Yellow
+        exit
+    }
 
     $vmObj = Get-VM -Name $NameVM
     $inventoryLocation = Get-Datacenter -Name $vmDatacenter | Get-Folder $vmFolder
