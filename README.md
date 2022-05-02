@@ -13,7 +13,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __add-disk-cluster.ps1__ --> Script para adicionar os discos no cluster e no grupo. 
   * __set-log-cluster.ps1__ --> Script para configurar o tamanho do log do cluster, deixei como 1024.
   
-  Obs:   Todos os scripts devem ser executados diretamente na origem, com exceção do __add-interface.ps1__, pois a origem precisar ser o PowerCli e acesso ao Vcenter.
+  Obs:   Todos os scripts devem ser executados diretamente na origem, com exceção do __add-interface.ps1__, pois a origem precisar ter o modulo do PowerCli e acesso ao Vcenter.
          Caso precise executar remoto, pode usar PSSession, ou modificar e colocar dentro de um Invoke-Command
 <br/><br/>
 * ### iis
