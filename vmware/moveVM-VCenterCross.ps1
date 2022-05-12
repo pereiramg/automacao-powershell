@@ -76,8 +76,4 @@ foreach ($line in $csv_info){
     Move-VM -VM $vmObj -Destination $targetHost -Datastore $targetDataStore -Network $target_pg -DiskStorageFormat Thin -NetworkAdapter ($vmObj | Get-NetworkAdapter | Sort Name) -RunAsync -Confirm:$false
 }
 
-
-
-
-
-
+Pause
