@@ -43,7 +43,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __AddUserLocalGroupMembers.ps1__ --> Script para Inserir usuários em grupos especificos de cada servidor. Precisa criar 3 arquivos txt conforme será descrito na execução
   * __RemoveUserLocalGroupMembers.ps1__ --> Script para Remover usuários em grupos especificos de cada servidor.
 <br/><br/>
-* ### UTILITARIOS
+* ### UTILITÁRIOS
   * __capture-MAC.ps1__ --> Script para Captura do MAC Address em servidores Windows.
   * __CopyFolderFile.ps1__ --> Script para Copiar Folder ou Files. Executar na origem do arquivo a ser copiado.
   * __dotnet-Hosting-2-1-18-win.ps1__ --> Script para instalação do dotnet-Hosting-2-1-18-win. Prestar a atenção no nome e local do EXE
@@ -83,6 +83,6 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __recapacity-disk.csv__ --> Modelo de informações para o script recapacity-disk.ps1.
   * __transfer-file-datastore.ps1__ --> Script para Transferencia de arquivos para um datastore
 <br/><br/>
-* ### winrm
+* ### WINRM
   * __TesteWinRM.ps1__ --> Script para Realizar os testes de conectividade do powershell.
 
