@@ -41,6 +41,8 @@ Write-Host "`n=================== Conectando no $vcenter  ======================
 function Export-VMInfo {
     $servers = Get-Content(Read-Host "Digite o nome do TXT onde estao as informacoes das VM's")
     
+    Write-Host "Executando..."
+
     foreach($server in $servers){
         Get-VM $server | 
         Select-Object Name,PowerState,
