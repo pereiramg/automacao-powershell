@@ -48,6 +48,10 @@ foreach ($line in $csv_info){
         exit
     }
 
+    #Variaveis nome do servidor
+    $nameVM = $line.nameVM
+    $vmObj = Get-VM -Name $nameVM
+
     #Desligando o servidor
     if((Get-VM $nameVM | Select-Object PowerState -ExpandProperty PowerState) -eq "PoweredOn"){
         Write-Host "Desligando a $nameVM" -ForegroundColor Green
@@ -58,10 +62,9 @@ foreach ($line in $csv_info){
     do{
         Write-Host "Servidor ainda ligado, aguarde um momento" -ForegroundColor Green
         Start-Sleep 2
-    }while((Get-VM $newName | Select-Object PowerState -ExpandProperty PowerState) -eq "PoweredOn")
+    }while((Get-VM $nameVM | Select-Object PowerState -ExpandProperty PowerState) -eq "PoweredOn")
 
-    $nameVM = $line.nameVM
-    $vmObj = Get-VM -Name $nameVM
+
     $target_pg = @()
     foreach ($item in $line.targetPortGroup.Split(",")){
         $target_pg += Get-VirtualNetwork -Name $item -Server $vcenterDestino
