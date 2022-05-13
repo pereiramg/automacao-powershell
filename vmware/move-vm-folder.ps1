@@ -10,7 +10,7 @@ Write-Host "`nImportando o modulo do PowerCli`n" -ForegroundColor Green
 Import-Module VMware.VimAutomation.Core -EA SilentlyContinue
 
 Write-Host "`n`n=================== Captura de informações =================`n`n" -ForegroundColor Green
-$csv_input = Read-Host "Insira o caminho com os dados dos servidores e disco"
+$csv_input = Read-Host "Insira o caminho do seu CSV com as informações para movimentação"
 $csv_info = Import-Csv $csv_input -UseCulture
 $senha_vmware = Get-Credential -Message "Insira usuário e senha para acesso ao VMware"
 
@@ -25,7 +25,7 @@ foreach ($line in $csv_info) {
     $vmFolder = $line.folder
     $vmDatacenter = $line.datacenter
 
-    Write-Host "`n`n=================== Conectando no $Vcenter =======================`n`n"
+    Write-Host "`n`n=================== Conectando no $Vcenter =======================`n`n" -ForegroundColor Green
     do{
         try{
             Connect-VIServer $Vcenter -Credential $senha_vmware -Force
@@ -54,6 +54,6 @@ foreach ($line in $csv_info) {
     Move-VM -vm $vmObj -InventoryLocation $inventoryLocation -RunAsync
     
     Write-Host "Realizado o move com sucesso" -ForegroundColor Green
-        
-    Disconnect-VIServer -Confirm:$false -EA SilentlyContinue
 }
+
+Pause
