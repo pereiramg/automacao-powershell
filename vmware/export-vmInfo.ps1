@@ -38,7 +38,7 @@ Write-Host "`n=================== Conectando no $vcenter  ======================
 
 
 # Criação da função
-funcion Export-VMInfo {
+function Export-VMInfo {
     $servers = Get-Content(Read-Host "Digite o nome do TXT onde estao as informacoes das VM's")
     
     foreach($server in $servers){
@@ -54,6 +54,8 @@ funcion Export-VMInfo {
     }
 }
 
-Export-VMinfo | Export-Csv ExportInfo.csv
+Export-VMinfo | Export-Csv "C:\temp\ExportInfo.csv"
+
+Write-Host "Arquivo salvo em C:\temp\ExportInfo.csv"
 
 pause
