@@ -25,7 +25,7 @@ foreach ($line in $csv_info){
     $vcenterDestino = $line.VcenterDestino
     $vcenterDestino =  $vcenterDestino.Trim()
 
-    Write-Host "`n`n=================== Conectando no $vcenterOrigem - Origem e $vcenterDestino - Destino =======================`n`n"
+    Write-Host "`n`n=================== Conectando no $vcenterOrigem - Origem e $vcenterDestino - Destino =======================`n`n" -ForegroundColor Green
     do{
         try{
             Connect-VIServer $vcenterOrigem -Credential $senhaVMware -Force
@@ -42,7 +42,7 @@ foreach ($line in $csv_info){
     }until( $lasterror -ne "System.ServiceModel.Security.SecurityNegotiationException")
 
     if ($Global:DefaultVIServers -ne $null){
-        Write-Host "Conectado com sucesso no $vcenter"
+        Write-Host "Conectado com sucesso no $vcenterOrigem e $vcenterDestino"
     }else{
         Write-Host "Não foi possivel se conectar, verificar..." -ForegroundColor Yellow
         exit
