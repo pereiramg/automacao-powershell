@@ -32,7 +32,7 @@ do{
     }$Error.Clear()
 }until( $lasterror -ne "System.ServiceModel.Security.SecurityNegotiationException")
 
-if ($Global:DefaultVIServers -ne $null){
+if ($Global:DefaultVIServers){
     Write-Host "Conectado com sucesso no $vcenter"
 }else{
     Write-Host "Não foi possivel se conectar, verificar..." -ForegroundColor Yellow
