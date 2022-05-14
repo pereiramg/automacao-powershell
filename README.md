@@ -74,6 +74,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __enable-network.ps1__ --> Script para Ativar uma interface de Rede disable no VMware
   * __export-vmInfo.ps1__ --> Script para Export-VMInfo.
   * __get-HBAs.ps1__ --> Script para Captura dos WWN e LUN ID
+  * __get-nics.ps1__ --> Script para Obter switch e porta de cada ESXi de um cluster
   * __LigarServidores.ps1__ --> Script para ligar servidores.
   * __move-vm-folder.ps1__ --> Script para Mover servidores para um folder.
   * __move-vm-folder.csv__ --> Modelo de informações para o script move-vm-folder.ps1.
