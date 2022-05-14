@@ -80,4 +80,5 @@ foreach ($vmhost in $(Get-Cluster -Name $clusterName | Get-VMHost <#| Where-Obje
 Write-Host "`nO log foi gravado no caminho abaixo: `n"
 Write-Host "C:\Temp\$("{0}_allnics_{1}.csv" -f $vmhost.Parent,$senhaVMware.UserName.ToUpper().Split("\")[-1])"
 
+
 Pause
