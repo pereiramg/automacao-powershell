@@ -29,7 +29,7 @@ Write-Host "`n=================== Conectando no $vcenter  ======================
         }$Error.Clear()
     }until( $lasterror -ne "System.ServiceModel.Security.SecurityNegotiationException")
 
-    if ($Global:DefaultVIServers -ne $null){
+    if ($Global:DefaultVIServers){
         Write-Host "Conectado com sucesso no $vcenter"
     }else{
         Write-Host "Não foi possivel se conectar, verificar..." -ForegroundColor Yellow
@@ -52,7 +52,9 @@ function Export-VMInfo {
         MemoryGB,
         ProvisionedSpaceGB,
         Folder,
-        @{N = "VCenter"; E = { $_.uid.split("@")[1].split(":")[0] }}
+        @{N = "VCenter"; E = { $_.uid.split("@")[1].split(":")[0] }},
+        @{N = "IP Address"; E = { @($_.guest.IPAddress)}},
+        @{N = "MAC Address"; E = { Get-VM $server | Get-NetworkAdapter | Select-Object MacAddress -ExpandProperty MacAddress}}
     }
 }
 
