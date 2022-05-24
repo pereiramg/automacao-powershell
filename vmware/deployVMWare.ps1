@@ -248,7 +248,7 @@ foreach ($line in $csvInfo){
 
                 #Configuração de hardware
                 Get-VM -Name $nameVM | Set-VM -NumCpu $vCPU -MemoryGB $Memory -Confirm:$false
-                $NumCoresPerSocket = New-Object -Type VMware.Vim.VirtualMachineConfigSpec -Property @{"$NumCoresPerSocket" = 1}
+                $NumCoresPerSocket = New-Object -Type VMware.Vim.VirtualMachineConfigSpec -Property @{"NumCoresPerSocket" = 1}
                 (Get-VM -Name $nameVM).ExtensionData.ReconfigVM_Task($NumCoresPerSocket)
 
                 #Configurando o disco Disk1
