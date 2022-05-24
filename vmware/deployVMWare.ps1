@@ -201,7 +201,7 @@ foreach ($line in $csvInfo){
                         $custSpec | Get-OSCustomizationNicMapping | Set-OSCustomizationNicMapping -IpMode UseStaticIP -IpAddress $SetIP -SubnetMask $Subnet -Dns $SetDNS1 -DefaultGateway $Gateway -Confirm:$false
                     }
 
-                    New-VM $nameVM -OSCustomizationSpec $custSpec -VMHost $hostESXi -Template $Template -Datastore $DataStore -Location $folder
+                    New-VM -Name $nameVM -OSCustomizationSpec $custSpec -VMHost $hostESXi -Template $Template -Datastore $DataStore -Location $folder
 
                     #Habilita o Devices.hotPlug
                     $configSpec = New-Object VMware.Vim.VirtualMachineConfigSpec
