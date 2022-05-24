@@ -31,7 +31,7 @@ foreach ($line in $csv_info){
     Write-Host "`n`n=================== Conectando no $vcenterName =======================`n`n"
     do{
         try{
-            Connect-VIServer $vcenterName -Credential $senha_vmware -Force
+            Connect-VIServer $vcenterName -Credential $senhaVMware -Force
         }catch [System.ServiceModel.Security.SecurityNegotiationException]{
             Write-Host "Realizando nova tentativa de conexão" -ForegroundColor Yellow
         }
