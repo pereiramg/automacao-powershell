@@ -163,7 +163,7 @@ foreach ($line in $csvInfo){
             if ($newDataStore -eq $null){
                 Write-Host "`n O DataStorage escolhido não possui espaço suficiente para a criação do servidor $nameVM`n" -ForegroundColor Yellow
                 Write-Host "`n Escolha outro e coloque na planilha novamente `n" -ForegroundColor Yellow
-                Spleep 5
+                Start-Sleep 5
                 Break
             }else{
                 Write-Host "Iniciando a criação da $nameVM" -ForegroundColor Green
@@ -180,7 +180,7 @@ foreach ($line in $csvInfo){
                     if ($CustomizationSpec -eq $null){
                         Write-Host "`n A costumização do Sistema Operacional Windows 2016 não foi encontrado `n" -ForegroundColor Yellow
                         Write-Host "`n Ajustar a variavel $CustomizationSpec `n" -ForegroundColor Yellow
-                        Spleep 5
+                        Start-Sleep 5
                         Break
                     }
 
@@ -229,7 +229,7 @@ foreach ($line in $csvInfo){
                         Write-Host "`n O arquivo $fileScriptLinux não foi encontrado`n" -ForegroundColor Yellow
                     }else{
                         Write-Host "`n Copiando o arquivo $fileScriptLinux para o servidor $nameVM"
-                        Spleep 120
+                        Start-Sleep 120
                         $Error.Clear()
                         Copy-VMGuestFile -Source $fileScriptLinux -Destination "/root/" -VM $nameVM -LocalToGuest -GuestCredential $senhalinux
                         if ($Error.Count -eq 0){
@@ -248,23 +248,23 @@ foreach ($line in $csvInfo){
 
                 #Configuração de hardware
                 Get-VM -Name $nameVM | Set-VM -NumCpu $vCPU -MemoryGB $Memory -Confirm:$false
-                $NumCoresPerSocket = New-Object -TypeName VMware.Vim.VirtualMachineConfigSpec -Property @{"$NumCoresPerSocket" = 1}
-                (Get-VM $nameVM).ExtensionData.ReconfigVM_Task($NumCoresPerSocket)
+                $NumCoresPerSocket = New-Object -Type VMware.Vim.VirtualMachineConfigSpec -Property @{"$NumCoresPerSocket" = 1}
+                (Get-VM -Name $nameVM).ExtensionData.ReconfigVM_Task($NumCoresPerSocket)
 
                 #Configurando o disco Disk1
                 if($Disk1 -eq ""){
                     Write-Host "`n Não foi configurado o disco adicional DISK1 para o $nameVM `n" -ForegroundColor Yellow
-                    Spleep 2
+                    Start-Sleep 2
                 }else{
-                    New-HardDisk -VM $nameVM -CapacityGB $Disk1 -Persistence persistent -StorageFormat "Thinck" -Confirm:$false
+                    New-HardDisk -VM $nameVM -CapacityGB $Disk1 -Persistence persistent -StorageFormat "Thick" -Confirm:$false
                 }
 
                 #Configurando o disco Disk2
                 if($Disk2 -eq ""){
                     Write-Host "`n Não foi configurado o disco adicional DISK2 para o $nameVM `n" -ForegroundColor Yellow
-                    Spleep 2
+                    Start-Sleep 2
                 }else{
-                    New-HardDisk -VM $nameVM -CapacityGB $Disk2 -Persistence persistent -StorageFormat "Thinck" -Confirm:$false
+                    New-HardDisk -VM $nameVM -CapacityGB $Disk2 -Persistence persistent -StorageFormat "Thick" -Confirm:$false
                 }
 
                 #Ajustando a rede
@@ -274,16 +274,16 @@ foreach ($line in $csvInfo){
                 #ligar a VM
                 Write-Host "`n Ligando a $nameVM`n" -ForegroundColor Green
                 Start-VM $nameVM -Confirm:$false
-                Spleep 20
+                Start-Sleep 20
             }
         }else{
             Write-Host "`n O servidor $nameVM já existe, verifique diretamente no Vcenter"
             Get-VM -Name $nameVM
-            Spleep 2
+            Start-Sleep 2
         }
     }else{
         Write-Host "`n O template $Template não existe no $Vcenter`n" -ForegroundColor Yellow
-        Spleep 2
+        Start-Sleep 2
     }
 
     #Desconectando do Vcenter
@@ -291,7 +291,7 @@ foreach ($line in $csvInfo){
     Disconnect-VIServer -Server $Vcenter -Confirm:$false -ErrorAction SilentlyContinue
 
     Stop-Transcript
-    Spleep 2
+    Start-Sleep 2
 }
 
 Write-Host "`n Finalizada a criação de todos os servidores`n" -ForegroundColor Green
