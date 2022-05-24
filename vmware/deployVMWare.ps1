@@ -96,7 +96,7 @@ foreach ($line in $csvInfo){
         New-Item -Path $logs -Name "$nameVM_$login.txt" -ItemType File
     }
 
-    Start-Transaction -Path $logsServer -Append
+    Start-Transcript -Path $logsServer -Append
     Get-Date | Select-Object "DateTime"
 
     # Exibe o conteudo das variaveis
