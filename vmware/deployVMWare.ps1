@@ -33,6 +33,7 @@ while ($switchLinux -ne 2){
                 .$addLinux }
         } #Close Switch
     }# close $addLinux
+    .$addLinux
 } # close while 
 
 # Trabalhando com o CSV
