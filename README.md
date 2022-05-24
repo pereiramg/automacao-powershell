@@ -71,6 +71,7 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6.
   * __create-datastore-vmfs-6.csv__ --> Modelo de informações para o script create-datastore-vmfs-6.ps1.
   * __deployVMWare.ps1__ --> Script para Criação de servidores no VCenter.
+  * __deployVMWare.csv__ --> Modelo de informações para o script deployVMWare.ps1
   * __discos-rdm-report.ps1__ --> Script para extrair relatorios de discos RDM.
   * __enable-network.ps1__ --> Script para Ativar uma interface de Rede disable no VMware
   * __export-vmInfo.ps1__ --> Script para Export-VMInfo.
