@@ -293,5 +293,5 @@ foreach ($line in $csvInfo){
     Spleep 2
 }
 
-Write-Host "`n Finaliza a criação de todos os servidores`n" -ForegroundColor Green
+Write-Host "`n Finalizada a criação de todos os servidores`n" -ForegroundColor Green
 Pause
