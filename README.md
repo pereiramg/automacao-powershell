@@ -67,6 +67,8 @@ O projeto visa criar diversos scritps em PowerShell para realizar instalação d
   * __change-cpu-memory.ps1__ --> Script para Ajustar CPU e Memoria dos servidores.
   * __change-cpu-memory.csv__ --> Modelo de informações para o script change-cpu-memory.ps1.
   * __config-network-linux.ps1__ --> Script para Configurações de IPs-Linux.
+  * __configMACAddress.ps1__ --> Script para Configurar o MAC Address em servidores
+  * __configMACAddress.csv__ --> Modelo de informações para o script configMACAddress.ps1
   * __config-ip-linux.sh__ --> Script de suporte ao config-network-linux.ps1.
   * __create-datastore-vmfs-6.ps1__ --> Script para criação de datastorage VMFS 6.
   * __create-datastore-vmfs-6.csv__ --> Modelo de informações para o script create-datastore-vmfs-6.ps1.
