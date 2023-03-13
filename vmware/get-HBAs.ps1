@@ -52,7 +52,7 @@ foreach ($VMHost in $(Get-Cluster $vmCluster | Get-VMHost | Where-Object PowerSt
 
     Write-Host ("{0}:" -f $VMHost.Name) -ForegroundColor Green
     Write-Host ">> WWNs:"
-    $HBAs = Get-VMHostHba Get-VMHost $VMHost -Type FibreChannel | Select-Object VMHost,Device,@{N="WWN";E={"{0:X}" -f $_.PortWorldWideName}},Status ### | Where-Object {$_.Status -eq "online"}
+    $HBAs = Get-VMHostHba -VMHost $VMHost -Type FibreChannel | Select-Object VMHost,Device,@{N="WWN";E={"{0:X}" -f $_.PortWorldWideName}},Status ### | Where-Object {$_.Status -eq "online"}
     $VMHosts += $HBAs
     $HBAs | ForEach-Object { (" {0} ({1}):  {2}" -f $_.Device, $_.Status, $($_.WWN -replace '..(?!$)', '$&:')) }
     $HBAs | ForEach-Object { ("{0};{1};{2};{3}" -f $_.VMHost, $_.Device, $($_.WWN -replace '..(?!$)', '$&:'), $_.Status) | Out-File $wwns -Append}
