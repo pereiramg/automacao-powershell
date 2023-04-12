@@ -11,7 +11,7 @@ Write-Host -ForegroundColor Green "========================================= Pro
 Write-Host "`nImportando o modulo do PowerCli"
 Import-Module VMware.VimAutomation.Core -ErrorAction SilentlyContinue
 
-Write-Host "`n`n =================================== Informacoes necessarias =================================== "
+Write-Host -ForegroundColor Green "`n`n =================================== Informacoes necessarias =================================== "
 
 $nameVMs = Get-Content(Read-Host "Informe o caminho do txt com os nomes dos servidores para serem desligados ")
 
@@ -19,7 +19,7 @@ $vcenter = Read-Host "Insira o nome do VCenter para se conectar"
 $senhaVMware = Get-Credential -Message "Insira usuario e senha para acesso ao VMware"
 
 
-Write-Host "`n`n=================== Conectando no $vcenter  =======================`n`n"
+Write-Host -ForegroundColor Green "`n`n=================== Conectando no $vcenter  =======================`n`n"
     do{
         try{
             Connect-VIServer $vcenter -Credential $senhaVMware -Force
