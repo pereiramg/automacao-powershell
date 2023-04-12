@@ -39,7 +39,7 @@ Write-Host "`n`n=================== Conectando no $vcenter  ====================
 
 foreach ($vm in $nameVMs){
 
-    Get-VM -Name $vm
-    Stop-VM $nameVM -Confirm:$false
+    Get-VM -Name $vm | Select-Object Name
+    Stop-VM -VM $vm -Confirm:$false
 }
 
