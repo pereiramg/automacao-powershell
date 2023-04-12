@@ -8,6 +8,13 @@ Import-Module ActiveDirectory
 # Listar as propriedades de um user
 Get-ADUser user
 
+#User Local
+Get-LocalUser -Name "User1"
+$Password = Read-Host -Prompt "Entre com a senha" -AsSecureString
+$UserAccount = Get-LocalUser -Name "User1"
+$UserAccount | Set-LocalUser -Password $Password
+
+
 # LIstar os grupos que um usuário faz parte
 Get-ADPrincipalGroupMembership user | Select-Object Name
 
