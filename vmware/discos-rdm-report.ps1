@@ -14,7 +14,7 @@ $servidores = Get-Content(Read-Host "Insira o caminho do arquivo txt com os dado
 $vcenter = Read-Host "Insira o nome do VCenter para se conectar"
 $senhaVMware = Get-Credential -Message "Insira usuario e senha para acesso ao VMware"
 
-Write-Host "`n`n=================== Conectando no $vcenter  =======================`n`n"
+Write-Host "`n`n=================== Conectando no $vcenter  =======================`n`n" -ForegroundColor Green
     do{
         try{
             Connect-VIServer $vcenter -Credential $senhaVMware -Force
@@ -32,7 +32,7 @@ Write-Host "`n`n=================== Conectando no $vcenter  ====================
     Write-Host "Conectado com sucesso no $vcenter"
 
 
-Write-Host "`n`n=================== Extrair relatorios de discos RDM ==================`n`n"
+Write-Host "`n`n=================== Extrair relatorios de discos RDM ==================`n`n" -ForegroundColor Green
 
 $report = @()
 
